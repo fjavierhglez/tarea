@@ -1,0 +1,114 @@
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+
+javier@Javier-pc:~/Escritorio$ nano ejemplo.txt
+#Aqui nos crea un archivo donde introducimos texto
+  GNU nano 2.7.4                Fichero: ejemplo.txt    
+
+(TEXTO)
+La bat@lla final de Juego de tronos, emitida esta madrugada, 
+empezó en el tiempo de la fant@sía (los castillos, barcos,
+dragones, cab@llos y caballeros de siempre sobre el tablero)
+para @cabar de forma abrupta en el nuestro, con esos hombres,
+mujeres y niños cubiertos de sangre y ceniza que por desgr@cia
+no nos son tan ajenos. 
+
+                               [ Nuevo fichero ]
+^G Ver ayuda ^O Guardar   ^W Buscar    ^K Cortar txt^J Justificar^C Posición
+^X Salir     ^R Leer fich.^\ Reemplazar^U Pegar txt ^T Ortografía^_ Ir a línea
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+
+javier@Javier-pc:~/Escritorio$ sed 's/a/@/g' ejemplo.txt
+#Aqui nos cambia en todo el texto la letra a por @ y nos arroja el resultado temporal
+
+L@ b@t@ll@ fin@l de Juego de tronos, emitid@ est@ m@drug@d@, 
+empezó en el tiempo de l@ f@nt@sí@ (los c@stillos, b@rcos,
+ dr@gones, c@b@llos y c@b@lleros de siempre sobre el t@blero)
+ p@r@ @c@b@r de form@ @brupt@ en el nuestro, con esos hombres,
+ mujeres y niños cubiertos de s@ngre y ceniz@ que por desgr@ci@
+ no nos son t@n @jenos.
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+
+javier@Javier-pc:~/Escritorio$ sed -i 's/a/@/g' ejemplo.txt
+#Aqui nos cambia y guarda los cambios en el texto sin arrojarnos el resultado
+
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+javier@Javier-pc:~/Escritorio$ cat ejemplo.txt
+#nos muestra el txt con los cambios
+
+L@ b@t@ll@ fin@l de Juego de tronos, emitid@ est@ m@drug@d@, 
+empezó en el tiempo de l@ f@nt@sí@ (los c@stillos, b@rcos,
+ dr@gones, c@b@llos y c@b@lleros de siempre sobre el t@blero)
+ p@r@ @c@b@r de form@ @brupt@ en el nuestro, con esos hombres,
+ mujeres y niños cubiertos de s@ngre y ceniz@ que por desgr@ci@
+ no nos son t@n @jenos.
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+javier@Javier-pc:~/Escritorio$ cat ejemplo.txt
+#nos muestra el txt con los cambios
+
+L@ b@t@ll@ fin@l de Juego de tronos, emitid@ est@ m@drug@d@, 
+empezó en el tiempo de l@ f@nt@sí@ (los c@stillos, b@rcos,
+ dr@gones, c@b@llos y c@b@lleros de siempre sobre el t@blero)
+ p@r@ @c@b@r de form@ @brupt@ en el nuestro, con esos hombres,
+ mujeres y niños cubiertos de s@ngre y ceniz@ que por desgr@ci@
+ no nos son t@n @jenos.
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+javier@Javier-pc:~/Escritorio$ sudo su sed -i 's/@/a/3' "holamundo.txt"
+
+ls#nos cambia el caracter @ en cada tercer palabra de cada linea
+
+L@ b@tall@ fin@l de Juego de tronos, emitid@ est@ m@drug@d@, 
+empezó en el tiempo de l@ f@ntasí@ (los c@stillos, b@rcos,
+ dr@gones, c@ballos y c@b@lleros de siempre sobre el t@blero)
+ p@r@ ac@b@r de form@ @brupt@ en el nuestro, con esos hombres,
+ mujeres y niños cubiertos de s@ngre y ceniz@ que por desgraci@
+ no nos son t@n @jenos. 
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+javier@Javier-pc:~/Escritorio/clase$ for i in {00..10}; do touch archivo-$i; done
+# te crea 10 archivos con un for
+javier@Javier-pc:~/Escritorio/clase$ ls
+archivo10.txt  archivo2.txt  archivo4.txt  archivo6.txt  archivo8.txt  
+archivo1.txt   archivo3.txt  archivo5.txt  archivo7.txt  archivo9.txt
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+
+javier@Javier-pc:~/Escritorio/clase$ tar cvf dir.tar.gz archivo1.txt
+archivo1.txt
+#te comprime un archivo
+javier@Javier-pc:~/Escritorio/clase$ ls
+archivo10.txt  archivo3.txt  archivo6.txt  archivo9.txt
+archivo1.txt   archivo4.txt  archivo7.txt  dir.tar.gz
+archivo2.txt   archivo5.txt  archivo8.txt
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+javier@Javier-pc:~/Escritorio/clase$ rm archivo1.txt
+#borramos el archivo1
+javier@Javier-pc:~/Escritorio/clase$ ls
+archivo10.txt  archivo3.txt  archivo5.txt  archivo7.txt  archivo9.txt
+archivo2.txt   archivo4.txt  archivo6.txt  archivo8.txt  dir.tar.gz
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+javier@Javier-pc:~/Escritorio/clase$ tar xvf dir.tar.gz 
+archivo1.txt
+#descomprime el archivo1 y verificamos con ls que este
+javier@Javier-pc:~/Escritorio/clase$ ls
+archivo10.txt  archivo2.txt  archivo4.txt  archivo6.txt  archivo8.txt  dir.tar.gz
+archivo1.txt   archivo3.txt  archivo5.txt  archivo7.txt  archivo9.txt
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+javier@Javier-pc:~/Escritorio/clase$ time -p tar xvf dir.tar.gz 
+archivo1.txt
+real 0.00
+user 0.00
+sys 0.00
+#nos muestra el tiempo de ejecucion del comando
+
+
+
+
